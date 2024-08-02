@@ -1,0 +1,17 @@
+:root {
+  --black: #181818;
+  --gray-300: #898989;
+  --white: #fff;
+
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.footer__sns {
+  display: flex;
+  gap: 1.25rem;
+  margin: 1.5rem;
+}
