@@ -1,15 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import SnsLinks from "./components/SnsLinks";
+import SnsLinksList from "@/components/SnsLinksList";
 import "@/styles/reset.css";  
-import "@/styles/SnsLink.css"; 
+import "@/styles/SnsLinksList.css"; 
 
 const container = document.getElementById("react-app");
 
 if (container) {
   createRoot(container).render(
     <StrictMode>
-      <SnsLinks />
+      <SnsLinksList />
     </StrictMode>
   );
 } else {

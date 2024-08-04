@@ -1,21 +1,19 @@
-import SnsLink from './SnsLink';
-import '@/styles/SnsLink.css';
+import PropTypes from 'prop-types';
 
-const links = [
-  { url: 'https://www.youtube.com/', icon: '../../public/icon/Youtube.svg', label: 'YouTube', ariaLabel: '유튜브 바로가기' },
-  { url: 'https://www.instagram.com/', icon: '../../public/icon/Instagram.svg', label: 'Instagram', ariaLabel: '인스타그램 바로가기' },
-  { url: 'https://x.com/?lang=ko', icon: '../../public/icon/Twitter.svg', label: 'Twitter', ariaLabel: '트위터 바로가기' },
-  { url: 'https://www.facebook.com/?locale=ko_KR', icon: '../../public/icon/Facebook.svg', label: 'Facebook', ariaLabel: '페이스북 바로가기' },
-];
-
-const SnsLinks = () => {
+const SnsLinks = ({ url, icon, ariaLabel }) => {
   return (
-    <ul className="footer__sns">
-      {links.map(link => (
-        <SnsLink key={link.label} {...link} />
-      ))}
-    </ul>
+    <li>
+      <a href={url} aria-label={ariaLabel} target="_blank" rel="noopener noreferrer">
+        <img src={icon} alt="" />
+      </a>
+    </li>
   );
+};
+
+SnsLinks.propTypes = {
+  url: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string.isRequired,
 };
 
 export default SnsLinks;
